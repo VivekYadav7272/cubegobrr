@@ -6,9 +6,9 @@ pub fn rot_y(angle: f64) -> Array2<f64> {
     let sin_theta = angle.sin();
 
     let rotation_matrix = arr2(&[
-        [cos_theta, 0.0, -sin_theta],
+        [cos_theta, 0.0, sin_theta],
         [0.0, 1.0, 0.0],
-        [sin_theta, 0.0, cos_theta],
+        [-sin_theta, 0.0, cos_theta],
     ]);
 
     rotation_matrix.t().to_owned()
@@ -20,8 +20,8 @@ pub fn rot_x(angle: f64) -> Array2<f64> {
 
     let rotation_matrix = arr2(&[
         [1.0, 0.0, 0.0],
-        [0.0, cos_theta, sin_theta],
-        [0.0, -sin_theta, cos_theta],
+        [0.0, cos_theta, -sin_theta],
+        [0.0, sin_theta, cos_theta],
     ]);
 
     rotation_matrix.t().to_owned()
@@ -47,13 +47,13 @@ pub fn perspective_projection_mat() -> Array2<f64> {
     // Now, since perspective is the opposite of the rotation the objects should have,
     // (i.e if you want to see from the perspective of the top of the object,
     // you rotate the world *down*, not *up*).
-    // Which means, since +ve angle indicates counter-clockwise behaviour,
-    // y-axis: rotate clockwise (but from perspective) => -(-ve angle) = +ve angle
-    // x-axis: rotate counter-clockwise (but from perspective) => -(+ve angle) = -ve angle
+    // Which means,
+    // y-axis: rotate clockwise => -ve angle
+    // x-axis: rotate counter-clockwise +ve angle
 
     orthogonal_projection_mat()
-        .dot(&rot_y(angle))
-        .dot(&rot_x(-angle))
+        .dot(&rot_y(-angle))
+        .dot(&rot_x(angle))
 }
 
 pub fn orthogonal_projection_mat() -> Array2<f64> {
