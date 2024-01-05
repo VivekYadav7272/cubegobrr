@@ -1,0 +1,367 @@
+cubegobrr v0.1.0 (/home/sandstorm/programming/rust_projects/cubegobrr)
+├── ndarray v0.15.6
+│   ├── matrixmultiply v0.3.8
+│   │   └── rawpointer v0.2.1
+│   │   [build-dependencies]
+│   │   └── autocfg v1.1.0
+│   ├── num-complex v0.4.4
+│   │   └── num-traits v0.2.17
+│   │       [build-dependencies]
+│   │       └── autocfg v1.1.0
+│   ├── num-integer v0.1.45
+│   │   └── num-traits v0.2.17 (*)
+│   │   [build-dependencies]
+│   │   └── autocfg v1.1.0
+│   ├── num-traits v0.2.17 (*)
+│   └── rawpointer v0.2.1
+└── turtle v1.0.0-rc.4 (https://github.com/VivekYadav7272/turtle.git#bfc21014)
+    ├── cfg-if v1.0.0
+    ├── futures-util v0.3.30
+    │   ├── futures-channel v0.3.30
+    │   │   └── futures-core v0.3.30
+    │   ├── futures-core v0.3.30
+    │   ├── futures-task v0.3.30
+    │   ├── pin-project-lite v0.2.13
+    │   ├── pin-utils v0.1.0
+    │   └── slab v0.4.9
+    │       [build-dependencies]
+    │       └── autocfg v1.1.0
+    ├── gl v0.14.0
+    │   [build-dependencies]
+    │   └── gl_generator v0.14.0
+    │       ├── khronos_api v3.1.0
+    │       ├── log v0.4.20
+    │       └── xml-rs v0.8.19
+    ├── glutin v0.27.0
+    │   ├── glutin_egl_sys v0.1.6
+    │   │   [build-dependencies]
+    │   │   └── gl_generator v0.14.0 (*)
+    │   ├── glutin_glx_sys v0.1.8
+    │   │   └── x11-dl v2.21.0
+    │   │       ├── libc v0.2.151
+    │   │       └── once_cell v1.19.0
+    │   │       [build-dependencies]
+    │   │       └── pkg-config v0.3.28
+    │   │   [build-dependencies]
+    │   │   └── gl_generator v0.14.0 (*)
+    │   ├── lazy_static v1.4.0
+    │   ├── libloading v0.7.4
+    │   │   └── cfg-if v1.0.0
+    │   ├── log v0.4.20
+    │   ├── osmesa-sys v0.1.2
+    │   │   └── shared_library v0.1.9
+    │   │       ├── lazy_static v1.4.0
+    │   │       └── libc v0.2.151
+    │   ├── parking_lot v0.11.2
+    │   │   ├── instant v0.1.12
+    │   │   │   └── cfg-if v1.0.0
+    │   │   ├── lock_api v0.4.11
+    │   │   │   └── scopeguard v1.2.0
+    │   │   │   [build-dependencies]
+    │   │   │   └── autocfg v1.1.0
+    │   │   └── parking_lot_core v0.8.6
+    │   │       ├── cfg-if v1.0.0
+    │   │       ├── instant v0.1.12 (*)
+    │   │       ├── libc v0.2.151
+    │   │       └── smallvec v1.11.2
+    │   ├── wayland-client v0.28.6
+    │   │   ├── bitflags v1.3.2
+    │   │   ├── downcast-rs v1.2.0
+    │   │   ├── libc v0.2.151
+    │   │   ├── nix v0.20.0
+    │   │   │   ├── bitflags v1.3.2
+    │   │   │   ├── cfg-if v1.0.0
+    │   │   │   └── libc v0.2.151
+    │   │   ├── scoped-tls v1.0.1
+    │   │   ├── wayland-commons v0.28.6
+    │   │   │   ├── nix v0.20.0 (*)
+    │   │   │   ├── once_cell v1.19.0
+    │   │   │   ├── smallvec v1.11.2
+    │   │   │   └── wayland-sys v0.28.6
+    │   │   │       ├── dlib v0.5.2
+    │   │   │       │   └── libloading v0.8.1
+    │   │   │       │       └── cfg-if v1.0.0
+    │   │   │       └── lazy_static v1.4.0
+    │   │   │       [build-dependencies]
+    │   │   │       └── pkg-config v0.3.28
+    │   │   └── wayland-sys v0.28.6 (*)
+    │   │   [build-dependencies]
+    │   │   └── wayland-scanner v0.28.6
+    │   │       ├── proc-macro2 v1.0.75
+    │   │       │   └── unicode-ident v1.0.12
+    │   │       ├── quote v1.0.35
+    │   │       │   └── proc-macro2 v1.0.75 (*)
+    │   │       └── xml-rs v0.8.19
+    │   ├── wayland-egl v0.28.6
+    │   │   ├── wayland-client v0.28.6 (*)
+    │   │   └── wayland-sys v0.28.6 (*)
+    │   └── winit v0.25.0
+    │       ├── bitflags v1.3.2
+    │       ├── instant v0.1.12 (*)
+    │       ├── lazy_static v1.4.0
+    │       ├── libc v0.2.151
+    │       ├── log v0.4.20
+    │       ├── mio v0.7.14
+    │       │   ├── libc v0.2.151
+    │       │   └── log v0.4.20
+    │       ├── mio-misc v1.2.2
+    │       │   ├── crossbeam v0.8.3
+    │       │   │   ├── cfg-if v1.0.0
+    │       │   │   ├── crossbeam-channel v0.5.10
+    │       │   │   │   ├── cfg-if v1.0.0
+    │       │   │   │   └── crossbeam-utils v0.8.18
+    │       │   │   │       └── cfg-if v1.0.0
+    │       │   │   ├── crossbeam-deque v0.8.4
+    │       │   │   │   ├── cfg-if v1.0.0
+    │       │   │   │   ├── crossbeam-epoch v0.9.17
+    │       │   │   │   │   ├── cfg-if v1.0.0
+    │       │   │   │   │   └── crossbeam-utils v0.8.18 (*)
+    │       │   │   │   │   [build-dependencies]
+    │       │   │   │   │   └── autocfg v1.1.0
+    │       │   │   │   └── crossbeam-utils v0.8.18 (*)
+    │       │   │   ├── crossbeam-epoch v0.9.17 (*)
+    │       │   │   ├── crossbeam-queue v0.3.10
+    │       │   │   │   ├── cfg-if v1.0.0
+    │       │   │   │   └── crossbeam-utils v0.8.18 (*)
+    │       │   │   └── crossbeam-utils v0.8.18 (*)
+    │       │   ├── crossbeam-queue v0.3.10 (*)
+    │       │   ├── log v0.4.20
+    │       │   └── mio v0.7.14 (*)
+    │       ├── parking_lot v0.11.2 (*)
+    │       ├── percent-encoding v2.3.1
+    │       ├── raw-window-handle v0.3.4
+    │       │   ├── libc v0.2.151
+    │       │   └── raw-window-handle v0.4.3
+    │       │       └── cty v0.2.2
+    │       ├── smithay-client-toolkit v0.12.3
+    │       │   ├── andrew v0.3.1
+    │       │   │   ├── bitflags v1.3.2
+    │       │   │   ├── rusttype v0.9.3
+    │       │   │   │   ├── ab_glyph_rasterizer v0.1.8
+    │       │   │   │   └── owned_ttf_parser v0.15.2
+    │       │   │   │       └── ttf-parser v0.15.2
+    │       │   │   ├── walkdir v2.4.0
+    │       │   │   │   └── same-file v1.0.6
+    │       │   │   ├── xdg v2.5.2
+    │       │   │   └── xml-rs v0.8.19
+    │       │   ├── bitflags v1.3.2
+    │       │   ├── calloop v0.6.5
+    │       │   │   ├── log v0.4.20
+    │       │   │   └── nix v0.18.0
+    │       │   │       ├── bitflags v1.3.2
+    │       │   │       ├── cfg-if v0.1.10
+    │       │   │       └── libc v0.2.151
+    │       │   ├── dlib v0.4.2
+    │       │   │   └── libloading v0.6.7
+    │       │   │       └── cfg-if v1.0.0
+    │       │   ├── lazy_static v1.4.0
+    │       │   ├── log v0.4.20
+    │       │   ├── memmap2 v0.1.0
+    │       │   │   └── libc v0.2.151
+    │       │   ├── nix v0.18.0 (*)
+    │       │   ├── wayland-client v0.28.6 (*)
+    │       │   ├── wayland-cursor v0.28.6
+    │       │   │   ├── nix v0.20.0 (*)
+    │       │   │   ├── wayland-client v0.28.6 (*)
+    │       │   │   └── xcursor v0.3.5
+    │       │   └── wayland-protocols v0.28.6
+    │       │       ├── bitflags v1.3.2
+    │       │       ├── wayland-client v0.28.6 (*)
+    │       │       └── wayland-commons v0.28.6 (*)
+    │       │       [build-dependencies]
+    │       │       └── wayland-scanner v0.28.6 (*)
+    │       ├── wayland-client v0.28.6 (*)
+    │       └── x11-dl v2.21.0 (*)
+    ├── interpolation v0.2.0
+    ├── ipc-channel v0.15.0
+    │   ├── bincode v1.3.3
+    │   │   └── serde v1.0.194
+    │   │       └── serde_derive v1.0.194 (proc-macro)
+    │   │           ├── proc-macro2 v1.0.75 (*)
+    │   │           ├── quote v1.0.35 (*)
+    │   │           └── syn v2.0.48
+    │   │               ├── proc-macro2 v1.0.75 (*)
+    │   │               ├── quote v1.0.35 (*)
+    │   │               └── unicode-ident v1.0.12
+    │   ├── crossbeam-channel v0.4.4
+    │   │   ├── crossbeam-utils v0.7.2
+    │   │   │   ├── cfg-if v0.1.10
+    │   │   │   └── lazy_static v1.4.0
+    │   │   │   [build-dependencies]
+    │   │   │   └── autocfg v1.1.0
+    │   │   └── maybe-uninit v2.0.0
+    │   ├── fnv v1.0.7
+    │   ├── lazy_static v1.4.0
+    │   ├── libc v0.2.151
+    │   ├── mio v0.6.23
+    │   │   ├── cfg-if v0.1.10
+    │   │   ├── iovec v0.1.4
+    │   │   │   └── libc v0.2.151
+    │   │   ├── libc v0.2.151
+    │   │   ├── log v0.4.20
+    │   │   ├── net2 v0.2.39
+    │   │   │   ├── cfg-if v0.1.10
+    │   │   │   └── libc v0.2.151
+    │   │   └── slab v0.4.9 (*)
+    │   ├── rand v0.7.3
+    │   │   ├── getrandom v0.1.16
+    │   │   │   ├── cfg-if v1.0.0
+    │   │   │   └── libc v0.2.151
+    │   │   ├── libc v0.2.151
+    │   │   ├── rand_chacha v0.2.2
+    │   │   │   ├── ppv-lite86 v0.2.17
+    │   │   │   └── rand_core v0.5.1
+    │   │   │       └── getrandom v0.1.16 (*)
+    │   │   └── rand_core v0.5.1 (*)
+    │   ├── serde v1.0.194 (*)
+    │   ├── tempfile v3.9.0
+    │   │   ├── cfg-if v1.0.0
+    │   │   ├── fastrand v2.0.1
+    │   │   └── rustix v0.38.28
+    │   │       ├── bitflags v2.4.1
+    │   │       └── linux-raw-sys v0.4.12
+    │   └── uuid v0.8.2
+    │       └── getrandom v0.2.11
+    │           ├── cfg-if v1.0.0
+    │           └── libc v0.2.151
+    ├── once_cell v1.19.0
+    ├── parking_lot v0.11.2 (*)
+    ├── pathfinder_canvas v0.5.0
+    │   ├── pathfinder_color v0.5.0
+    │   │   └── pathfinder_simd v0.5.2
+    │   │       [build-dependencies]
+    │   │       └── rustc_version v0.4.0
+    │   │           └── semver v1.0.21
+    │   ├── pathfinder_content v0.5.0
+    │   │   ├── arrayvec v0.5.2
+    │   │   ├── bitflags v1.3.2
+    │   │   ├── image v0.23.14
+    │   │   │   ├── bytemuck v1.14.0
+    │   │   │   ├── byteorder v1.5.0
+    │   │   │   ├── color_quant v1.1.0
+    │   │   │   ├── num-iter v0.1.43
+    │   │   │   │   ├── num-integer v0.1.45 (*)
+    │   │   │   │   └── num-traits v0.2.17 (*)
+    │   │   │   │   [build-dependencies]
+    │   │   │   │   └── autocfg v1.1.0
+    │   │   │   ├── num-rational v0.3.2
+    │   │   │   │   ├── num-integer v0.1.45 (*)
+    │   │   │   │   └── num-traits v0.2.17 (*)
+    │   │   │   │   [build-dependencies]
+    │   │   │   │   └── autocfg v1.1.0
+    │   │   │   ├── num-traits v0.2.17 (*)
+    │   │   │   └── png v0.16.8
+    │   │   │       ├── bitflags v1.3.2
+    │   │   │       ├── crc32fast v1.3.2
+    │   │   │       │   └── cfg-if v1.0.0
+    │   │   │       ├── deflate v0.8.6
+    │   │   │       │   ├── adler32 v1.2.0
+    │   │   │       │   └── byteorder v1.5.0
+    │   │   │       └── miniz_oxide v0.3.7
+    │   │   │           └── adler32 v1.2.0
+    │   │   ├── log v0.4.20
+    │   │   ├── pathfinder_color v0.5.0 (*)
+    │   │   ├── pathfinder_geometry v0.5.1
+    │   │   │   ├── log v0.4.20
+    │   │   │   └── pathfinder_simd v0.5.2 (*)
+    │   │   ├── pathfinder_simd v0.5.2 (*)
+    │   │   └── smallvec v1.11.2
+    │   ├── pathfinder_geometry v0.5.1 (*)
+    │   └── pathfinder_renderer v0.5.0
+    │       ├── bitflags v1.3.2
+    │       ├── byteorder v1.5.0
+    │       ├── half v1.8.2
+    │       ├── hashbrown v0.7.2
+    │       │   ├── ahash v0.3.8
+    │       │   └── serde v1.0.194 (*)
+    │       │   [build-dependencies]
+    │       │   └── autocfg v1.1.0
+    │       ├── instant v0.1.12 (*)
+    │       ├── log v0.4.20
+    │       ├── pathfinder_color v0.5.0 (*)
+    │       ├── pathfinder_content v0.5.0 (*)
+    │       ├── pathfinder_geometry v0.5.1 (*)
+    │       ├── pathfinder_gpu v0.5.0
+    │       │   ├── bitflags v1.3.2
+    │       │   ├── half v1.8.2
+    │       │   ├── image v0.23.14 (*)
+    │       │   ├── pathfinder_color v0.5.0 (*)
+    │       │   ├── pathfinder_geometry v0.5.1 (*)
+    │       │   ├── pathfinder_resources v0.5.0
+    │       │   └── pathfinder_simd v0.5.2 (*)
+    │       ├── pathfinder_resources v0.5.0
+    │       ├── pathfinder_simd v0.5.2 (*)
+    │       ├── pathfinder_ui v0.5.0
+    │       │   ├── hashbrown v0.7.2 (*)
+    │       │   ├── pathfinder_color v0.5.0 (*)
+    │       │   ├── pathfinder_geometry v0.5.1 (*)
+    │       │   ├── pathfinder_gpu v0.5.0 (*)
+    │       │   ├── pathfinder_resources v0.5.0
+    │       │   ├── pathfinder_simd v0.5.2 (*)
+    │       │   ├── serde v1.0.194 (*)
+    │       │   ├── serde_derive v1.0.194 (proc-macro) (*)
+    │       │   └── serde_json v1.0.111
+    │       │       ├── itoa v1.0.10
+    │       │       ├── ryu v1.0.16
+    │       │       └── serde v1.0.194 (*)
+    │       ├── rayon v1.8.0
+    │       │   ├── either v1.9.0
+    │       │   └── rayon-core v1.12.0
+    │       │       ├── crossbeam-deque v0.8.4 (*)
+    │       │       └── crossbeam-utils v0.8.18 (*)
+    │       ├── serde v1.0.194 (*)
+    │       ├── serde_json v1.0.111 (*)
+    │       ├── smallvec v1.11.2
+    │       └── vec_map v0.8.2
+    ├── pathfinder_color v0.5.0 (*)
+    ├── pathfinder_geometry v0.5.1 (*)
+    ├── pathfinder_gl v0.5.0
+    │   ├── gl v0.14.0 (*)
+    │   ├── half v1.8.2
+    │   ├── log v0.4.20
+    │   ├── pathfinder_geometry v0.5.1 (*)
+    │   ├── pathfinder_gpu v0.5.0 (*)
+    │   ├── pathfinder_resources v0.5.0
+    │   └── pathfinder_simd v0.5.2 (*)
+    ├── pathfinder_renderer v0.5.0 (*)
+    ├── pathfinder_resources v0.5.0
+    ├── rand v0.8.5
+    │   ├── libc v0.2.151
+    │   ├── rand_chacha v0.3.1
+    │   │   ├── ppv-lite86 v0.2.17
+    │   │   └── rand_core v0.6.4
+    │   │       └── getrandom v0.2.11 (*)
+    │   └── rand_core v0.6.4 (*)
+    ├── serde v1.0.194 (*)
+    ├── serde_json v1.0.111 (*)
+    ├── svg v0.10.0
+    ├── thiserror v1.0.56
+    │   └── thiserror-impl v1.0.56 (proc-macro)
+    │       ├── proc-macro2 v1.0.75 (*)
+    │       ├── quote v1.0.35 (*)
+    │       └── syn v2.0.48 (*)
+    └── tokio v0.2.25
+        ├── bytes v0.5.6
+        ├── fnv v1.0.7
+        ├── futures-core v0.3.30
+        ├── lazy_static v1.4.0
+        ├── libc v0.2.151
+        ├── memchr v2.7.1
+        ├── mio v0.6.23 (*)
+        ├── mio-uds v0.6.8
+        │   ├── iovec v0.1.4 (*)
+        │   ├── libc v0.2.151
+        │   └── mio v0.6.23 (*)
+        ├── num_cpus v1.16.0
+        │   └── libc v0.2.151
+        ├── pin-project-lite v0.1.12
+        ├── signal-hook-registry v1.4.1
+        │   └── libc v0.2.151
+        ├── slab v0.4.9 (*)
+        └── tokio-macros v0.2.6 (proc-macro)
+            ├── proc-macro2 v1.0.75 (*)
+            ├── quote v1.0.35 (*)
+            └── syn v1.0.109
+                ├── proc-macro2 v1.0.75 (*)
+                ├── quote v1.0.35 (*)
+                └── unicode-ident v1.0.12
