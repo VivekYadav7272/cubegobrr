@@ -11,8 +11,8 @@ use crate::cube::Cube;
 
 fn serious_stuff(d: &Drawing, t: &mut Turtle, angle: f64) {
     let cube = Cube::new([
-        [-0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5],
         [-0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5],
+        [0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5],
         [-0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5],
     ]);
 
@@ -46,7 +46,6 @@ fn draw_coordinate_axes(d: &Drawing, t: &mut Turtle) {
 fn main() {
     let mut drawing = Drawing::new();
     let mut turtle = drawing.add_turtle();
-
     turtle.set_speed("instant");
 
     let mut angle = 1.5;
@@ -59,7 +58,7 @@ fn main() {
 
         serious_stuff(&drawing, &mut turtle, angle);
 
-        angle += 1.5;
+        angle = (angle + 1.5) % 360.0;
 
         std::thread::sleep(std::time::Duration::from_millis(15));
     }

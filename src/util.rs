@@ -1,6 +1,8 @@
 use ndarray::prelude::*;
 use turtle::*;
 
+const PERSPECTIVE_ANGLE: f64 = 5.0 * std::f64::consts::PI / 180.0;
+
 pub fn rot_y(angle: f64) -> Array2<f64> {
     let cos_theta = angle.cos();
     let sin_theta = angle.sin();
@@ -32,8 +34,6 @@ pub fn perspective_projection_mat() -> Array2<f64> {
     // we'll project from a slight angle from both the axes x and y, so that z looks like it's there.
     // say 5 degrees.
 
-    let angle = 5.0 * std::f64::consts::PI / 180.0;
-
     // I want perspective to look like this:
 
     /*
@@ -52,8 +52,8 @@ pub fn perspective_projection_mat() -> Array2<f64> {
     // x-axis: rotate counter-clockwise +ve angle
 
     orthogonal_projection_mat()
-        .dot(&rot_y(-angle))
-        .dot(&rot_x(angle))
+        .dot(&rot_y(-PERSPECTIVE_ANGLE))
+        .dot(&rot_x(PERSPECTIVE_ANGLE))
 }
 
 pub fn orthogonal_projection_mat() -> Array2<f64> {
@@ -68,4 +68,10 @@ pub fn scale_mat(d: &Drawing) -> Array2<f64> {
         [scaling_factor as f64 / 2., 0.0],
         [0.0, scaling_factor as f64 / 2.],
     ])
+}
+
+pub fn light_source() -> Array1<f64> {
+    rot_y(PERSPECTIVE_ANGLE)
+        .dot(&rot_x(-PERSPECTIVE_ANGLE))
+        .dot(&arr1(&[0.0, 0.0, 1.0]))
 }
