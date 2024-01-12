@@ -26,6 +26,26 @@ impl Quad {
     }
 
     pub fn draw(&self, d: &Drawing, t: &mut Turtle) {
+        // both are unit vectors.
+        let light = light_source();
+        let normal = self.get_normal();
+
+        let shine = light.dot(&normal);
+
+        if shine > 0. {
+            // out of sight, out of mind.
+            return;
+        }
+
+        // from here on out, shine ranges from -1 to 0. The smaller the magnitude (i.e the closer towards 0),
+        // the darker the blue hue should be.
+        // so, we need to scale this value from 0 to 255 in blue channel.
+
+        let shadow_blue_hue = 30.;
+
+        let blue = (255. - shadow_blue_hue) * -shine + shadow_blue_hue;
+        t.set_fill_color(Color::rgb(0., 0., blue));
+
         let projection = perspective_projection_mat().dot(&self.vertices);
 
         let quad_to_display = scale_mat(d).dot(&projection);
@@ -34,31 +54,14 @@ impl Quad {
 
         t.pen_down();
 
-        // both are unit vectors.
-        let light = light_source();
-        let normal = self.get_normal();
-
-        let shine = light.dot(&normal);
-        // from here on out, shine ranges from -1 to 0. The smaller the magnitude (i.e the closer towards 0),
-        // the darker the blue hue should be.
-        // so, we need to scale this value from 0 to 255 in blue channel.
-
-        let shadow_blue_hue = 30.;
-
-        if shine < 0. {
-            let blue = (255. - shadow_blue_hue) * -shine + shadow_blue_hue;
-            t.set_fill_color(Color::rgb(0., 0., blue));
-            t.begin_fill();
-        }
+        t.begin_fill();
         for i in 1..4 {
             t.go_to((quad_to_display[[0, i]], quad_to_display[[1, i]]));
         }
         t.go_to((quad_to_display[[0, 0]], quad_to_display[[1, 0]]));
         t.pen_up();
 
-        if shine < 0. {
-            t.end_fill();
-        }
+        t.end_fill();
     }
 
     pub fn get_normal(&self) -> Array1<f64> {
