@@ -65,13 +65,12 @@ impl Quad {
     }
 
     pub fn get_normal(&self) -> Array1<f64> {
-        // I don't know how to use un-owned versions :(
-        let vert1 = self.vertices.column(0).to_owned();
-        let vert2 = self.vertices.column(1).to_owned();
-        let vert3 = self.vertices.column(2).to_owned();
+        let vert1 = self.vertices.column(0);
+        let vert2 = self.vertices.column(1);
+        let vert3 = self.vertices.column(2);
 
-        let v1 = &vert2 - vert1;
-        let v2 = vert3 - vert2;
+        let v1 = &vert2 - &vert1;
+        let v2 = &vert3 - &vert2;
 
         // cross product them.
         let i = v1[1] * v2[2] - v1[2] * v2[1];
