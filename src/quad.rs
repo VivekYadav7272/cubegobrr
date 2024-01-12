@@ -78,6 +78,7 @@ impl Quad {
         let k = v1[0] * v2[1] - v1[1] * v2[0];
 
         let magnitude = (i * i + j * j + k * k).sqrt();
+
         arr1(&[i / magnitude, j / magnitude, k / magnitude])
     }
 }
