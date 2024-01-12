@@ -16,10 +16,6 @@ fn serious_stuff(d: &Drawing, t: &mut Turtle, angle: f64) {
         [-0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5],
     ]);
 
-    t.set_pen_color(colors::RED);
-
-    cube.draw(d, t);
-
     let rot_mat = rot_x(angle * consts::PI / 180.0);
     let rot_mat = rot_mat.dot(&rot_y(angle * consts::PI / 180.0));
 
