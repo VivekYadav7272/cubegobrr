@@ -43,8 +43,10 @@ impl Quad {
         // the darker the blue hue should be.
         // so, we need to scale this value from 0 to 255 in blue channel.
 
+        let shadow_blue_hue = 30.;
+
         if shine < 0. {
-            let blue = 255. * -shine;
+            let blue = (255. - shadow_blue_hue) * -shine + shadow_blue_hue;
             t.set_fill_color(Color::rgb(0., 0., blue));
             t.begin_fill();
         }
